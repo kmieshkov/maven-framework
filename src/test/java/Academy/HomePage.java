@@ -13,7 +13,8 @@ public class HomePage extends Base {
 	@Test(dataProvider = "getData")
 	public void basePageNavigation(String email, String password, String text) throws IOException {
 		driver = initDriver();
-		driver.get("https://qaclickacademy.com");
+		String url = properties.getProperty("url");
+		driver.get(url);
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.getCloseIframeButton().click();
 		landingPage.getLogin().click();

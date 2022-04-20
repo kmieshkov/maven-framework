@@ -18,9 +18,9 @@ import java.util.concurrent.TimeUnit;
 public class Base {
 
 	public static WebDriver driver;
+	public Properties properties = new Properties();
 
 	 public WebDriver initDriver() throws IOException {
-		 Properties properties = new Properties();
 		 properties.load(new FileInputStream("src/main/resources/data.properties"));
 		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
 		 switch (browserName) {

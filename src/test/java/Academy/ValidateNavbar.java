@@ -5,8 +5,9 @@ import org.testng.annotations.Test;
 import pageObjects.LandingPage;
 
 import java.io.IOException;
+import java.util.Locale;
 
-public class ValidateTitle extends Base {
+public class ValidateNavbar extends Base {
 
 	@Test
 	public void basePageNavigation() throws IOException {
@@ -15,7 +16,6 @@ public class ValidateTitle extends Base {
 		driver.get(url);
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.getCloseIframeButton().click();
-		Assert.assertTrue(landingPage.getTitle().getText().equalsIgnoreCase("Featured Courses"));
 		Assert.assertTrue(landingPage.getNavbar().isDisplayed());
 		driver.quit();
 	}

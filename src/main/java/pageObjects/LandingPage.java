@@ -10,6 +10,7 @@ public class LandingPage {
 	By login = By.xpath("//span[contains(text(), 'Login')]");
 	By closeIframe = By.xpath("//button[contains(text(),'NO THANKS')]");
 	By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
+	By navbar = By.cssSelector(".navbar-collapse.collapse");
 
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
@@ -25,5 +26,9 @@ public class LandingPage {
 
 	public WebElement getTitle() {
 		return driver.findElement(title);
+	}
+
+	public WebElement getNavbar() {
+		return driver.findElement(navbar);
 	}
 }
