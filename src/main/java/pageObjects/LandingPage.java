@@ -8,7 +8,7 @@ public class LandingPage {
 
 	private WebDriver driver;
 	By login = By.xpath("//span[contains(text(), 'Login')]");
-	By closeIframe = By.xpath("//button[contains(text(),'NO THANKS')]");
+	By closeButton = By.xpath("//button[contains(text(),'NO THANKS')]");
 	By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
 	By navbar = By.cssSelector(".navbar-collapse.collapse");
 
@@ -20,8 +20,12 @@ public class LandingPage {
 		return driver.findElement(login);
 	}
 
-	public WebElement getCloseIframeButton() {
-		return driver.findElement(closeIframe);
+	public WebElement getCloseButton() {
+		return driver.findElement(closeButton);
+	}
+
+	public boolean isCloseButtonPresent() {
+		return driver.findElements(closeButton).size() > 0;
 	}
 
 	public WebElement getTitle() {
