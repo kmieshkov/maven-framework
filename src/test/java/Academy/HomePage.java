@@ -1,5 +1,7 @@
 package Academy;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -11,15 +13,19 @@ import java.io.IOException;
 
 public class HomePage extends Base {
 
+	public static Logger Log = LogManager.getLogger(Base.class.getName());
+
 	@BeforeTest
 	public void initialize() throws IOException {
 		driver = initDriver();
+		Log.info("Driver is initialized");
 	}
 
 	@Test(dataProvider = "getData")
 	public void basePageNavigation(String email, String password, String text) {
 		String url = properties.getProperty("url");
 		driver.get(url);
+		Log.info("Navigated to the Home Page");;
 		LandingPage landingPage = new LandingPage(driver);
 		if (landingPage.isCloseButtonPresent()) {
 			landingPage.getCloseButton().click();
@@ -29,7 +35,7 @@ public class HomePage extends Base {
 		loginPage.getEmail().sendKeys(email);
 		loginPage.getPassword().sendKeys(password);
 		loginPage.getLoginButton().click();
-		System.out.println(text);
+		Log.info(text);
 	}
 
 	@DataProvider
@@ -46,7 +52,7 @@ public class HomePage extends Base {
 
 	@AfterTest
 	public void teardown() {
-		driver.quit();
+		driver.close();
 		driver = null;
 	}
 }
