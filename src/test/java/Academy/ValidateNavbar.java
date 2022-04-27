@@ -24,7 +24,7 @@ public class ValidateNavbar extends Base {
 	}
 
 	@Test
-	public void basePageNavigation() {
+	public void validateAppNavbar() {
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.getCloseButton().click();
 		Assert.assertTrue(landingPage.getNavbar().isDisplayed());

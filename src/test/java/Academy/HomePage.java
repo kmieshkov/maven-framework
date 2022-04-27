@@ -22,7 +22,7 @@ public class HomePage extends Base {
 	}
 
 	@Test(dataProvider = "getData")
-	public void basePageNavigation(String email, String password, String text) {
+	public void validateLogin(String email, String password, String text) {
 		String url = properties.getProperty("url");
 		driver.get(url);
 		Log.info("Navigated to the Home Page");;

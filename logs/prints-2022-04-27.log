@@ -1,8 +1,8 @@
-14:31:46.730 [main] INFO  Academy.Base - Navigation Bard is displayed
-14:32:15.333 [main] INFO  Academy.Base - Non Restricted
-14:32:44.988 [main] INFO  Academy.Base - Restricted
-14:32:50.369 [main] INFO  Academy.Base - Driver is initialized
-14:33:10.360 [main] INFO  Academy.Base - Navigated to the Home Page
-14:33:11.602 [main] INFO  Academy.Base - Successfully validated Title text message
-15:52:14.758 [main] INFO  Academy.Base - Driver is initialized
-15:52:33.835 [main] INFO  Academy.Base - Navigated to the Home Page
+17:20:58.161 [main] INFO  Academy.Base - Driver is initialized
+17:21:17.348 [main] INFO  Academy.Base - Navigated to the Home Page
+17:21:18.543 [main] INFO  Academy.Base - Navigation Bard is displayed
+17:21:23.961 [main] INFO  Academy.Base - Driver is initialized
+17:21:43.344 [main] INFO  Academy.Base - Navigated to the Home Page
+17:21:47.337 [main] INFO  Academy.Base - Non Restricted
+17:22:06.658 [main] INFO  Academy.Base - Navigated to the Home Page
+17:22:18.828 [main] INFO  Academy.Base - Restricted

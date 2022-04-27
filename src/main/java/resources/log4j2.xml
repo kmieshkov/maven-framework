@@ -7,7 +7,7 @@
 
     <Appenders>
 <!--        Logging into the file-->
-        <RollingFile name="File" fileName="${basePath}/prints.log" filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
+        <RollingFile name="File" fileName="${basePath}/prints.log" filePattern="${basePath}/prints-%d{yyyy-MM-dd HH:mm:ss}.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
 <!--            When file will rich 500KB, log4j will create the new file as specified in filePattern-->
             <SizeBasedTriggeringPolicy size="500" />

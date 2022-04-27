@@ -27,7 +27,7 @@ public class Base {
 	public Properties properties = new Properties();
 
 	 public WebDriver initDriver() throws IOException {
-		 properties.load(new FileInputStream("src/main/resources/data.properties"));
+		 properties.load(new FileInputStream("src/main/java/resources/data.properties"));
 		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
 		 switch (browserName) {
 			 case "firefox":

@@ -3,6 +3,7 @@
 <suite name="All Test Suite">
     <listeners>
         <listener class-name="Academy.Listeners"/>
+        <listener class-name="resources.ExtentReporterNG"/>
     </listeners>
     <test name="Validating Navbar">
         <classes>

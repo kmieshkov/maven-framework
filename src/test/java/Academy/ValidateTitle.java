@@ -24,7 +24,7 @@ public class ValidateTitle extends Base {
 	}
 
 	@Test
-	public void basePageNavigation() {
+	public void validateAppTitle() {
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.getCloseButton().click();
 		Assert.assertTrue(landingPage.getTitle().getText().equalsIgnoreCase("Featured Courses123"));
