@@ -1,6 +1,9 @@
 package Academy;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -9,8 +12,11 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -51,5 +57,14 @@ public class Base {
 		 }
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		 return driver;
+	 }
+
+	 public void getScreenshot(String fileName) throws IOException {
+		 SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 Date date = new Date(System.currentTimeMillis());
+		 String timestamp = formatter.format(date);
+
+		 File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		 FileUtils.copyFile(src, new File("./screenshots/" + fileName + " " + timestamp + ".png"));
 	 }
 }

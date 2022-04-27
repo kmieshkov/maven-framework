@@ -27,7 +27,7 @@ public class ValidateTitle extends Base {
 	public void basePageNavigation() {
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.getCloseButton().click();
-		Assert.assertTrue(landingPage.getTitle().getText().equalsIgnoreCase("Featured Courses"));
+		Assert.assertTrue(landingPage.getTitle().getText().equalsIgnoreCase("Featured Courses123"));
 		Log.info("Successfully validated Title text message");
 	}
 
