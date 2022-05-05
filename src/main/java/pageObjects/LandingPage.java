@@ -7,10 +7,10 @@ import org.openqa.selenium.WebElement;
 public class LandingPage {
 
 	private WebDriver driver;
-	By login = By.xpath("//span[contains(text(), 'Login')]");
-	By closeButton = By.xpath("//button[contains(text(),'NO THANKS')]");
-	By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
-	By navbar = By.cssSelector(".navbar-collapse.collapse");
+	private final By login = By.xpath("//span[contains(text(), 'Login')]");
+	private final By closeButton = By.xpath("//button[contains(text(),'NO THANKS')]");
+	private final By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
+	private final By navbar = By.cssSelector(".navbar-collapse.collapse");
 
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
