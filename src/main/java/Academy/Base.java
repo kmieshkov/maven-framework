@@ -28,7 +28,10 @@ public class Base {
 
 	 public WebDriver initDriver() throws IOException {
 		 properties.load(new FileInputStream("src/main/java/resources/data.properties"));
-		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
+//		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
+
+		 // mvn test -Dbrowser=chrome
+		 String browserName = System.getProperty("browser").toLowerCase(Locale.ROOT);
 		 switch (browserName) {
 			 case "firefox":
 				 WebDriverManager.firefoxdriver().setup();
