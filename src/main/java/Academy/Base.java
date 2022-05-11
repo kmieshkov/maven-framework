@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -28,10 +29,10 @@ public class Base {
 
 	 public WebDriver initDriver() throws IOException {
 		 properties.load(new FileInputStream("src/main/java/resources/data.properties"));
-//		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
+		 String browserName = properties.getProperty("browser").toLowerCase(Locale.ROOT);
 
 		 // mvn test -Dbrowser=chrome
-		 String browserName = System.getProperty("browser").toLowerCase(Locale.ROOT);
+//		 String browserName = System.getProperty("browser").toLowerCase(Locale.ROOT);
 		 switch (browserName) {
 			 case "firefox":
 				 WebDriverManager.firefoxdriver().setup();
@@ -55,7 +56,11 @@ public class Base {
 				 break;
 			 default:
 				 WebDriverManager.chromedriver().setup();
-				 driver = new ChromeDriver();
+				 ChromeOptions chromeOptions = new ChromeOptions();
+				 chromeOptions.addArguments("--headless");
+				 chromeOptions.addArguments("--window-size=1920,1200");
+				 chromeOptions.addArguments("--disable-gpu");
+				 driver = new ChromeDriver(chromeOptions);
 				 break;
 		 }
 		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -11,6 +11,7 @@ public class LandingPage {
 	private final By closeButton = By.xpath("//button[contains(text(),'NO THANKS')]");
 	private final By title = By.xpath("//h2[contains(text(),'Featured Courses')]");
 	private final By navbar = By.cssSelector(".navbar-collapse.collapse");
+	private final By header = By.cssSelector("div[class*='video-banner'] h3");
 
 	public LandingPage(WebDriver driver) {
 		this.driver = driver;
@@ -35,4 +36,9 @@ public class LandingPage {
 	public WebElement getNavbar() {
 		return driver.findElement(navbar);
 	}
+
+	public WebElement getHeader() {
+		return driver.findElement(header);
+	}
+
 }
